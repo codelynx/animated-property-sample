@@ -17,10 +17,10 @@ class MyView: UIView {
 
 	var margin: CGFloat {
 		get { return _margin }
-		set { self.setMargin(newValue, animated: false) }
+		set { self.set(margin: newValue, animated: false) }
 	}
 
-	func setMargin(margin: CGFloat, animated: Bool) {
+	func set(margin margin: CGFloat, animated: Bool) {
 		let closure: ()->() = {
 			self.coreView.frame = CGRectInset(self.bounds, margin, margin)
 			self._margin = margin
@@ -51,7 +51,7 @@ class MyView: UIView {
 
 	func tapAction(sender: UITapGestureRecognizer) {
 		let value = CGFloat(arc4random_uniform(50))
-		self.setMargin(value, animated: true)
+		self.set(margin: value, animated: true)
 	}
 
 }
@@ -59,6 +59,7 @@ class MyView: UIView {
 let myView = MyView(frame: CGRectMake(0, 0, 200, 200))
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 XCPlaygroundPage.currentPage.liveView = myView
-myView.setMargin(90.0, animated: true)
+myView.set(margin: 90.0, animated: true)
+
 
 

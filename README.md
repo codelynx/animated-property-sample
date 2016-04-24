@@ -1,4 +1,4 @@
-#Animated Property Sample
+#aaa
 
 iOS provides some animatable properties for some components.  A single property may have multiple methods one with animated, and the other is implecity not animated.
 
